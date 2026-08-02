@@ -2,7 +2,7 @@ import {
   type RouteRecordRaw,
   type RouterOptions,
   createRouter,
-  createWebHistory,
+  createWebHashHistory,
 } from 'vue-router';
 import type { Component } from 'vue';
 
@@ -46,7 +46,7 @@ const routes = Object.entries(pages)
   .filter((route): route is Exclude<typeof route, null> => route !== null);
 
 const options: RouterOptions = {
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: [...routes, { path: '/:notFound(.*)', redirect: '/' }],
 };
 

@@ -1,6 +1,7 @@
 {
-  "name": "base-vue-template",
+  "name": "vue-chat",
   "version": "1.0.0",
+  "homepage": "https://someuser77671.github.io/vue-chat",
   "prettier": {
     "semi": true,
     "singleQuote": true,
@@ -24,7 +25,6 @@
   "scripts": {
     "prepare": "husky",
     "start": "vite --port 5173",
-    "prepreview": "npm ci --ignore-scripts --fund false; vite build --sourcemap; npx kill-port 5174",
     "preview": "vite preview --port 5174",
     "build": "vite build",
     "build:analyze": "vite build --mode analyze",
@@ -33,7 +33,9 @@
     "lint": "eslint --config ./eslint.config.js",
     "postlint": "echo 'lint is done'",
     "typecheck": "tsc --noEmit",
-    "posttypecheck": "echo 'typecheck is done'"
+    "posttypecheck": "echo 'typecheck is done'",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "lint-staged": {
     "*.{ts,js,vue}": [
@@ -57,6 +59,7 @@
     "@vitejs/plugin-vue": "^6.0.0",
     "eslint": "9.29.0",
     "eslint-plugin-vue": "10.2.0",
+    "gh-pages": "^6.3.0",
     "globals": "16.2.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2",
