@@ -77,6 +77,7 @@ import useUserStore from '@/stores/user';
 defineProps<{ visible: boolean }>();
 const userStore = useUserStore();
 const { toggle: toggleIsDark } = useDarkCustom();
+console.log(userStore.isLoggedIn);
 
-const routerLinks = [{ to: { name: 'applications' }, displayName: 'Заявки' }];
+const routerLinks: Array<{ to: { name: string }; displayName: string }> = [];
 </script>

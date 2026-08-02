@@ -14,12 +14,8 @@ const pages: Record<string, { default: Component }> = import.meta.glob(
 );
 
 const pageMeta = {
-  applications: {
+  chat: {
     alias: '/',
-  },
-  application: {
-    path: '/applications/:applicationId',
-    props: true,
   },
 };
 

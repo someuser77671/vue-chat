@@ -54,7 +54,7 @@ const useUserStore = defineStore('user', () => {
     }
 
     login(user);
-    router.push({ name: 'applications' });
+    router.push({ name: 'chat' });
   };
 
   const logout = () => {
