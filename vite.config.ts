@@ -28,6 +28,7 @@ export default defineConfig(({ mode }) => ({
   },
   envPrefix: 'APP_',
   appType: 'spa',
+  publicPath: '/vue-chat/',
   server: {
     host: false,
     port: 5173,
