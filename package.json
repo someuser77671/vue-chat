@@ -35,7 +35,7 @@
     "typecheck": "tsc --noEmit",
     "posttypecheck": "echo 'typecheck is done'",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "lint-staged": {
     "*.{ts,js,vue}": [
