@@ -1,0 +1,87 @@
+{
+  "name": "base-vue-template",
+  "version": "1.0.0",
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "experimentalTernaries": true,
+    "experimentalOperatorPosition": "start",
+    "quoteProps": "consistent",
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "objectWrap": "preserve",
+    "bracketSameLine": false,
+    "arrowParens": "always",
+    "vueIndentScriptAndStyle": false,
+    "endOfLine": "lf",
+    "singleAttributePerLine": true
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare": "husky",
+    "start": "vite --port 5173",
+    "prepreview": "npm ci --ignore-scripts --fund false; vite build --sourcemap; npx kill-port 5174",
+    "preview": "vite preview --port 5174",
+    "build": "vite build",
+    "build:analyze": "vite build --mode analyze",
+    "format": "prettier --write --ignore-unknown src/",
+    "prettierCheck": "prettier --check --ignore-unknown src/",
+    "lint": "eslint --config ./eslint.config.js",
+    "postlint": "echo 'lint is done'",
+    "typecheck": "tsc --noEmit",
+    "posttypecheck": "echo 'typecheck is done'"
+  },
+  "lint-staged": {
+    "*.{ts,js,vue}": [
+      "npm run lint",
+      "npm run prettierCheck"
+    ]
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.5",
+    "@vueuse/core": "^13.5.0",
+    "currency.js": "^2.0.4",
+    "pinia": "^3.0.2",
+    "tailwindcss": "^4.1.11",
+    "vue": "^3.5.16",
+    "vue-router": "^4.5.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "@types/node": "^22.16.5",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "eslint": "9.29.0",
+    "eslint-plugin-vue": "10.2.0",
+    "globals": "16.2.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "prettier": "3.5.3",
+    "rollup-plugin-visualizer": "^6.0.3",
+    "typescript": "~5.8.0",
+    "typescript-eslint": "8.34.0",
+    "vite": "^6.3.5",
+    "vite-plugin-vue-devtools": "^7.7.7"
+  },
+  "engines": {
+    "node": "24.12.0",
+    "npm": "11.6.2"
+  },
+  "os": [
+    "linux"
+  ],
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "onFail": "error"
+    },
+    "packageManager": {
+      "name": "npm",
+      "onFail": "error"
+    }
+  }
+}
