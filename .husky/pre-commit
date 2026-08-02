@@ -1,0 +1,3 @@
+npm ci --fund false --audit false
+npx lint-staged
+npm run typecheck
